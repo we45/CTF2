@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+{% block js %}
+<script type="text/javascript" src="/static/js/validator.js"></script>
+{% endblock %}
+{% block content %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Upload Health Record</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form id="demo-form" action="" method="POST" enctype='multipart/form-data'>{%csrf_token%}
+            {% for field in form.visible_fields %}
+            <div>
+                {{ field.label_tag }}
+            </div>
+            <div>
+                {{ field }}
+            </div>
+            <div>
+                {% for err in field.errors %}
+                {{ err }}
+                {% endfor %}
+            <div>
+            {% endfor %}
+            <div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            <div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "home/home_base.html" %}
+{%block header%}
+  <!--header-->
+  <div class="header">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-left">
+          <h1><a href="/"><img src="/static/images/logo.png" alt="">we Care</a></h1>
+        </div>
+        <!--navigation-->
+   <!--      <div class="header-text navbar-left">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting<p>
+        </div> -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="header-right">
+          <div class="top-nav-text">
+            <ul>
+              <li>Call us: <span>080-42124017</span></li>
+              <li>Email : SecDevOps@we45.com</li>   
+              <li><a href="/login/" class="btn btn-danger">Login</a></li>   
+            </ul>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">         
+            <ul class="nav navbar-nav navbar-left">
+              <li><a href="/"><span>H</span><span>O</span><span>M</span><span>E</span></a></li>
+              <li><a href="/about/" class="link link--yaku"><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></a></li>    
+              <!-- appointment -->
+              <li><a href="/appointment/add/" class="link link--yaku"><span>A</span><span>P</span><span>P</span><span>O</span><span>I</span><span>N</span><span>T</span> <span>M</span><span>E</span><span>N</span><span>T</span></a></li>
+              <li class="active"><a href="/contact_us/" class="link link--yaku"><span>C</span><span>O</span><span>N</span><span>T</span><span>A</span><span>C</span><span>T</span> <span>U</span><span>S</span></a></li>
+            </ul>   
+            <div class="clearfix"> </div>
+          </div><!--//navigation-->
+        </div>
+        <div class="clearfix"> </div>
+      </div>  
+    </nav>    
+  </div>  
+  <!--//header-->
+{%endblock%}
+{% block content %}
+	<div class="contact">
+		<div class="container">
+			<h3 class="title1">Contact <span>Us</span></h3>
+		</div>
+	</div>
+	<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.739102504922!2d77.56167414987308!3d12.92448281936391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15808fa8706f%3A0x3ea4910e85adadfc!2swe45!5e0!3m2!1sen!2sin!4v1458213413241" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+	<div class="contact">
+		<div class="container">
+	<!-- 		<h3 class="title1">Contact <span>Us</span></h3> -->
+			<div class="contact-info">
+		<!-- 		<div class="col-md-8 contact-grids">
+					<h5>Gnissimos voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</h5>
+					<p>Landitiis praesentium eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecat atque corrupti quos dolores et quas molestias excepturi sint occaecat officia deserunt mollitia laborum et dolorum </p>					
+				</div> -->
+				<div class="col-md-4 contact-grids">
+					<div class="cnt-address">
+						<h3 class="title1">Address</h3>
+						<h4>Headquarters</h4>
+						<p>#1439, Surabhi
+							<span>22nd main Banashankari 2nd stage</span>
+							Bangalore - 560070
+						</p>
+						<!-- <h4>Get In Touch</h4> -->
+						<p>Telephone: 080-42124017
+							<span>
+							E-mail: SecDevOps@we45.com</span>					
+						</p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--//contact-->
+{% endblock %}

@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Users</title>
+	
+	    <script type="text/javascript">
+	    var EXAMPLE = {}
+		EXAMPLE.MODELS = {}
+		EXAMPLE.COLLECTIONS = {}
+		EXAMPLE.VIEWS = {}
+	    </script>
+	    <script src="/static/js/jquery.js"></script>
+	    <script src="/static/js/underscore.js"></script>
+	    <script src="/static/js/backbone.js"></script>
+	    <script src="/static/js/backbone_tastypie.js"></script>
+	    <script src="/static/js/user_models.js"></script>
+	    <script src="/static/js/example.js"></script>
+</head>
+<body>
+	<h1>Users</h1>
+	<table id="my-model-list" class="list" border='1'>
+
+	</table>
+
+	<script>
+
+		var view = new EXAMPLE.VIEWS.ExampleList()
+		EXAMPLE.COLLECTIONS.Users.fetch({ reset : true })
+	</script>
+
+
+</body>
+
+</html>

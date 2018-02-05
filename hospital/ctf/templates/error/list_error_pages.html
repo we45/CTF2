@@ -1,0 +1,62 @@
+{% extends "base/base.html" %}
+{%block title%}SecDevOps-HTTP Responses{%endblock%}
+{%block js%}
+<script type="text/javascript">
+    $('.show').hide()
+    
+</script>
+{%endblock%}
+{%block content%}
+<h2 class="text-center" style="margin-top:9%;">List of HTTP Requests and Responses</h2>
+<div class="content">
+    <div class="content_box">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <br>      
+                    <div class="content">
+                        <form action="" method="POST">
+                            {%csrf_token%}
+                            <ul>
+                                <input name="200" type="submit" class="btn btn-primary" value="200" id="show"> 
+                                <input name="301" type="submit" class="btn btn-primary" value="301"> 
+                                <input name="302" type="submit" class="btn btn-primary" value="302"> 
+                                <input name="401" type="submit" class="btn btn-primary" value="401">          
+                                <input name="403" type="submit" class="btn btn-primary" value="403">          
+                                <input name="404" type="submit" class="btn btn-primary" value="404">          
+                                <input name="500" type="submit" class="btn btn-primary" value="500">          
+                                <input name="502" type="submit" class="btn btn-primary" value="502">         
+                            </ul>
+                            {% if request_name%}
+                            <div class="col-sm-12 show" >
+                                <div class="col-sm-12">
+                                    <h4>Request</h4>
+                                    <p>{{request_name}}</p>                     
+                                    <p>
+                                    {%for k,v in req_headers.items%}
+                                     <p><b>{{k}}</b>   : <i>{{v}}</i></p>
+                                    {%endfor%}
+                                    <hr>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="col-sm-12">
+                                    <h4>Response</h4>
+                                    <!-- <hr> -->
+                                    <p><strong>{{response_code}}</strong></p>
+                        {%for k,v in response_header.items%}
+                        <p><b>{{k}}</b>   : <i>{{v}}</i></p>
+                        {%endfor%}
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                                    
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+{%block title%}SecDevOps - List of Health Plan Appointments{%endblock%} 
+{% block content %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Health Plan Appointments</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Patient Name</th>
+                    <th>Email</th>
+                    <th>Plan</th>
+                    <th>Appointment Date</th>
+                    {% if user.is_superuser %}
+                    <td align='right'>
+                        <a href="/plan/add/" class='btn btn-small btn-primary'>
+                            Create Health Plan
+                        </a>
+                    </td>
+                    {%endif%}
+                </tr>
+            </thead>
+            {% for appointment in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ appointment.patient }}</td>
+                <td>{{ appointment.patient.email }}</td>
+                <td>{{ appointment.plan }}</td>
+                <td>{{ appointment.datetime }}</td>
+                {% if user.is_superuser %}
+                <td align='right'>
+                    <a href="/appointment/delete/{{appointment.id}}/" class='btn btn-small btn-danger'>
+                        Delete
+                    </a>
+                </td>
+                {%endif%}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

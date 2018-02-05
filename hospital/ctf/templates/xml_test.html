@@ -1,0 +1,39 @@
+{% extends "base/base.html" %}
+<title>{%block title%}SecDevOps - XML{%endblock%} </title>
+{% block content %}
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+	<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+		<table class='table'>
+			<tr>
+				<td>
+					<input type="file" name="upload" class='form-control'>
+				</td>
+				<td>
+					<input type="submit" name="Upload!" class='btn btn-primary'>
+				</td>
+			</tr>
+		</table>	
+		{% if products %}
+		<table class='table'>
+			<tr>
+				<th>Product Names</th>
+			</tr>
+			{% for p in products %}
+			<tr>
+				<td>{{ p.text }}</td>
+			</tr>
+			{% endfor %}
+		</table>	
+		{% endif %}
+	</form>
+</div>
+{% endblock %}

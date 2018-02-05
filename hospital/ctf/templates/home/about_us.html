@@ -1,0 +1,197 @@
+{% extends "home/home_base.html" %}
+{%block header%}
+  <!--header-->
+  <div class="header">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-left">
+          <h1><a href="/"><img src="/static/images/logo.png" alt="">we Care</a></h1>
+        </div>
+        <!--navigation-->
+   <!--      <div class="header-text navbar-left">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting<p>
+        </div> -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="header-right">
+          <div class="top-nav-text">
+            <ul>
+              <li>Call us: <span>080-42124017</span></li>
+              <li>Email : SecDevOps@we45.com</li>   
+              <li><a href="/login/" class="btn btn-danger">Login</a></li>   
+            </ul>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">         
+            <ul class="nav navbar-nav navbar-left">
+              <li><a href="/"><span>H</span><span>O</span><span>M</span><span>E</span></a></li>
+              <li class="active"><a href="/about/" class="link link--yaku"><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></a></li>    
+              <!-- appointment -->
+              <li><a href="/appointment/add/" class="link link--yaku"><span>A</span><span>P</span><span>P</span><span>O</span><span>I</span><span>N</span><span>T</span> <span>M</span><span>E</span><span>N</span><span>T</span></a></li>
+              <li><a href="/contact_us/" class="link link--yaku"><span>C</span><span>O</span><span>N</span><span>T</span><span>A</span><span>C</span><span>T</span> <span>U</span><span>S</span></a></li>
+            </ul>   
+            <div class="clearfix"> </div>
+          </div><!--//navigation-->
+        </div>
+        <div class="clearfix"> </div>
+      </div>  
+    </nav>    
+  </div>  
+  <!--//header-->
+{%endblock%}
+{% block content %}
+<!-- 	<div class="banner about-bnr">
+		<div class="container">
+		</div>
+	</div> -->
+	<!--about-->
+	<div class="about">
+		<div class="container">
+			<h3 class="title1">About<span> Us</span></h3>
+			<div class="about-info">
+				<div class="col-md-8 about-grids grid-top">
+					<h4>About Us</h4>
+					<p class="top">weCare has a special significance in the overall healthcare industry of India. A social seed sown more than five decades ago is today the country’s third largest healthcare group with a network of 15 hospitals providing comprehensive care that is both curative and preventive in nature for a wide variety of patients not just from India but also from across the globe.</p>
+					<p>One of the most preferred and recognised healthcare facilities by pharmaceutical companies for drug trials, the group’s flagship hospital in Bangalore is NABH accredited and ranked amongst the Top 10 multispecialty hospitals in India.</p>
+					<p>The ethos of weCare is its belief in the credo of its triad of core values namely "Clinical Excellence, Patient Centricity and Ethical Practices" which have led to it becoming one of the best and most trusted healthcare providers in the country today.</p>
+					<p>Our Clinical Excellence is rooted in our excellent team of doctors/medical specialists who are well versed with the latest advancements in their respective field of medical expertise This is further complemented by our teams of highly trained nurses and paramedical people.</p>
+					<p>Patient Centricity is a key tenet that we follow and which has won the goodwill and trust of our patients over the years. A total ‘patient first’ approach at all times in the outpatients department—working at late hours of the day and even on holidays—are but a few examples amongst many other such patient friendly practices that has resulted in us being one of the most preferred hospitals wherever we are present across India and also to the development of a strong bond based on faith and trust with our patients. </p>
+
+					<div class="about-row">
+						<div class="col-md-4 about-imgs">
+							<img src="/static/images/care3.jpg" alt="" class="img-responsive zoom-img"/>
+						</div>
+						<div class="col-md-4 about-imgs">
+							<img src="/static/images/care1.jpg" alt=""  class="img-responsive zoom-img"/>
+						</div>
+						<div class="col-md-4 about-imgs">
+							<img src="/static/images/care2.jpg" alt=""  class="img-responsive zoom-img"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="col-md-4 about-grids">
+					<div class="offic-time">
+						<div class="time-top">
+							<h4>Working Hours</h4>
+						</div>
+						<div class="time-bottom">
+							<h5>Mon-Fri:10am-9pm </h5>
+							<h5>Sat-Sun:By Special Appointment</h5>
+							<p><a href="/appointment/add/" class="btn btn-primary">APPOINTMENT</a></p>
+							
+							<!-- <p>Dignissimos at vero eos et accusamus et iusto odio ducimus qui accusamus et. </p> -->
+						</div>
+					</div>					
+				</div>	
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--//about-->
+	<!--about-team-->
+	<div class="about-team"> 
+		<div class="container">
+			<h3 class="title1">Meet Our <span>Team</span></h3>
+			<div class="team-info">
+				<div class="col-md-3 about-team-grids">
+					<img src="/static/images/doctor3.jpg" alt="" height="225"/>
+					<div class="team-text">
+						<h4><span>Bruce Banner,</span> Surgeon</h4>
+						<p>Bangalore</p>
+					</div>
+					<div class="caption">
+						<ul>
+							<li><a href="#"></a></li>
+							<li><a href="#" class="f2"></a></li>
+							<li><a href="#" class="f3"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class=" col-md-3 about-team-grids">
+					<img src="/static/images/img9.jpg" alt=""/>
+					<div class="team-text">
+						<h4><span>JESSICA,</span>Director</h4>
+						<p>Bangalore</p>
+					</div>
+					<div class="caption">
+						<ul>
+							<li><a href="#"></a></li>
+							<li><a href="#" class="f2"></a></li>
+							<li><a href="#" class="f3"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 about-team-grids">
+					<img src="/static/images/img10.jpg" alt=""/>
+					<div class="team-text">
+						<h4><span>Jim Moriarty,</span>Cardiologists</h4>				
+						<p>Bangalore</p>
+					</div>
+					<div class="caption">
+						<ul>
+							<li><a href="#"></a></li>
+							<li><a href="#" class="f2"></a></li>
+							<li><a href="#" class="f3"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 about-team-grids">
+					<img src="/static/images/img11.jpg" alt=""/>
+					<div class="team-text">
+						<h4><span>Lucy,</span> Dentist</h4>
+						<p>Bangalore</p>
+					</div>
+					<div class="caption">
+						<ul>
+							<li><a href="#"></a></li>
+							<li><a href="#" class="f2"></a></li>
+							<li><a href="#" class="f3"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--//about-team-->
+	<!--about-servcs-->
+<!-- 	<div class="about-servcs"> 
+		<div class="container">
+			<h3 CLASS="title1">We Specialize In </h3>
+			<h5>We provide a wide range of services </h5>
+			<div class="servcs-info">
+				<div class="col-md-6 sevcs-grids">
+					<h4><span>01. </span>THE SCOPE OF MEDICAL CARE</h4>
+					<p>Lorem Ipsum generators on the Internet tend to repeat predefined chunks on the Internet tend as necessary, making this the first true generator on the Internet embarrassing hidden in predefined chunks.</p>			
+				</div>
+				<div class="col-md-6 sevcs-grids">
+					<h4><span>02. </span>SPECIALIZED PROCEDURES</h4>
+					<p>Lorem Ipsum generators on the Internet tend to repeat predefined chunks on the Internet tend as necessary, making this the first true generator on the Internet embarrassing hidden in predefined chunks.</p>		
+				</div>
+				<div class="clearfix"> </div>
+				TODO:
+<! @pavan bugfix html file is here  -->
+<!-- https://s3.amazonaws.com/SecDevOps-healthcare/20160330_FtXm2tRGj3Z9uxbk00002.html -->
+<!-- 			</div>
+			<div class="servcs-info">
+				<div class="col-md-6 sevcs-grids">
+					<h4><span>01. </span>LATEST EQUIPMENT</h4>
+					<p>Lorem Ipsum generators on the Internet tend to repeat predefined chunks on the Internet tend as necessary, making this the first true generator on the Internet embarrassing hidden in predefined chunks.</p>			
+				</div>
+				<div class="col-md-6 sevcs-grids">
+					<h4><span>02. </span>CONVENIENT IN-PATIENT SERVICES</h4>
+					<p>Lorem Ipsum generators on the Internet tend to repeat predefined chunks on the Internet tend as necessary, making this the first true generator on the Internet embarrassing hidden in predefined chunks.</p>			
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div> -->
+	<!--//about-servcs-->
+
+	
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "base/base.html" %}
+{%block title%}SecDevOps-AES Encryption{%endblock%}
+<style type="text/css">
+    .main_header{
+    font-style: normal;
+    font-family: Helvetica;
+    font-style: bold;
+    margin-top: 3%;
+    }
+</style>
+{%block content%}
+<div class="content">
+    <h1 align="center">AES Encryption with Different Modes</h1>
+    <!--  <h5 align="center">Escaping and unescaping are useful to prevent Cross Site Scripting (XSS) attack. It is one of the common web attacks, since it will be easy to create an attack vector if the site is not designed carefully. Its ranked number 3 in the OWASP's Top 10 vulnerabilities of 2013</h5> -->
+    <div class="content_box">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <br>      
+                    <div class="content">
+                        <form class="form-horizontal group-border-dashed" action="" method="POST">
+                            {%csrf_token%}
+                            <div class="row">                                
+                                <div class="col-md-6 text-right">
+                                    <input type="text" name="message" class="form-control" value="" required >
+                                </div>
+                                <div class="col-md-6 text-left">
+                                    <input type="submit" value='Submit' class="btn btn-info">
+                                </div>
+                                
+                            </div>
+                            {% if data %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <br>
+                                    <p>
+                                        =======================================================================================
+                                    </p>
+                                    <h4 class="main_header">CBC MODE</h4>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Encrypted string :</label>
+                                        {{data.CBC.0}}
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Decrypted string :</label>
+                                        {{data.CBC.1}}
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Encrypted string :</label>
+                                        {{data.CBC.2}}
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Decrypted string :</label>
+                                        {{data.CBC.3}}
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <p>
+                                        =======================================================================================
+                                    </p>
+                                    <h4 class="main_header">ECB MODE</h4>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Encrypted string :</label>
+                                        {{data.ECB.0}}
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Decrypted string :</label>
+                                        {{data.ECB.1}}
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Encrypted string :</label>
+                                        {{data.ECB.2}}
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Decrypted string :</label>
+                                        {{data.ECB.3}}
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <p>
+                                        =======================================================================================
+                                    </p>
+                                    <h4 class="main_header">CFB MODE</h4>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Encrypted string :</label>
+                                        {{data.CFB.0}}
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Decrypted string :</label>
+                                        {{data.CFB.1}}
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Encrypted string :</label>
+                                        {{data.CFB.2}}
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3">Decrypted string :</label>
+                                        {{data.CFB.3}}
+                                    </div>
+                                </div>
+                            </div>                            
+                            {% endif %}
+                    </div>
+                </div>
+                </form>        
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+<!-- End-Of-File -->

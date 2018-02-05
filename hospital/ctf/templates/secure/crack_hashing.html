@@ -1,0 +1,131 @@
+{% extends "base/base.html" %}
+{%block title%}SecDevOps-Crack Hashing{%endblock%}
+
+<style type="text/css">
+
+.main_header{
+
+  font-style: normal;
+
+  font-family: Helvetica;
+
+  font-style: bold;
+
+  margin-top: 3%;
+
+}
+
+.text-wrap {
+
+      -ms-word-break: break-all;
+
+      word-break: break-all;
+
+      word-break: break-word;
+
+      -webkit-hyphens: auto;
+
+      -moz-hyphens: auto;
+
+      hyphens: auto;
+
+      }
+
+
+
+td {
+
+  word-wrap:break-word;
+
+  word-break:break-word;
+
+}
+
+/*table {
+
+    table-layout: fixed;
+
+    word-wrap: break-word;
+
+}*/
+
+/*table {border-collapse:collapse; table-layout:fixed; width:310px;}
+
+   table td {border:solid 1px #fab; width:100px; word-wrap:break-word;}
+
+   td {
+
+overflow: hidden;
+
+max-width: 400px;
+
+word-wrap: break-word;
+
+}*/
+
+</style>
+
+{%block content%}
+<h2 class="text-center" style="margin-top:19%;">Cracking Hashes</h2>
+<div class="content">
+
+  <div class="content_box">
+
+    <div class="row">
+
+    <div class="col-md-12">
+
+      <div class="block-flat">
+
+      <br>      
+
+      <div class="content">
+
+        <form class="form-horizontal group-border-dashed" action="" method="POST">           
+
+          {%csrf_token%}
+
+      
+
+          <div class="col-sm-12">              
+
+            <div class="pull-right">
+
+              <input name="srchbutton" type="submit" class="btn btn-primary" value="Check">
+
+            </div>
+
+            <div class="col-sm-10 pull-left">
+
+              {{form.hashing}}
+
+            </div>
+
+         </div>
+
+        
+        </form>        
+
+      </div>
+
+    </div>
+
+    </div>
+
+</div>
+
+<!-- Footer Part   -->
+
+    <div class="copy" style="margin-top:20%;">
+
+       <p>© 2015 we45</p>
+
+    </div>
+
+     </div>
+
+   </div>
+
+{%endblock%}
+
+<!-- End-Of-File -->

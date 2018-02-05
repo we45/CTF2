@@ -1,0 +1,90 @@
+{% extends "base/base.html" %}
+{%block title%}SecDevOps - Create Technicians{%endblock%}
+{%block css%}
+<link href="/static/css/select2.min.css" rel="stylesheet">
+<style type="text/css">
+.errorlist{
+    color: #F44336;
+}
+</style>
+{%endblock%}
+{% block content %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Create Lab Technician</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form id="demo-form" action="" method="POST">{%csrf_token%}
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>First Name</label>
+                    {{form.first_name.errors}}
+                    {{form.first_name}}
+                </div>
+            </div>
+             <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Last Name</label>
+                    {{form.last_name.errors}}
+                    {{form.last_name}}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Email</label>
+                    {{form.email.errors}}
+                    {{form.email}}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Doctor</label>
+                    {{form.doctor.errors}}
+                    {{form.doctor}}
+                   <!--  <select class="select2_multiple form-control" multiple="multiple">
+                     <option>{{form.doctor}}</option>
+                </select> -->
+                </div>
+            </div>
+            <div class="col-sm-11">
+                <button class="btn btn-primary pull-right" type="submit">Submit</button>
+            <div>
+        </form>
+
+<!--          <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Multiple</label>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select class="select2_multiple form-control" multiple="multiple">
+                          <option>Choose option</option>
+                          <option>Option one</option>
+                          <option>Option two</option>
+                          <option>Option three</option>
+                          <option>Option four</option>
+                          <option>Option five</option>
+                          <option>Option six</option>
+                        </select>
+                      </div>
+                    </div> -->
+    </div>
+</div>
+{%block js%}
+<script src="/static/js/select2.full.js"></script>
+  <!-- select2 -->
+  <script>
+    $(document).ready(function() {
+      $(".select2_single").select2({
+        placeholder: "Select a state",
+        allowClear: true
+      });
+      $(".select2_group").select2({});
+      $(".select2_multiple").select2({
+        // maximumSelectionLength: 4,
+        // placeholder: "With Max Selection limit 4",
+        allowClear: true
+      });
+    });
+  </script>
+  <!-- /select2 -->
+{%endblock%}
+{% endblock %}

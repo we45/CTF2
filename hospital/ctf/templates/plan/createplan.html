@@ -1,0 +1,57 @@
+{% extends "base/base.html" %}
+{%block title%}SecDevOps - Create HealthPlan{%endblock%}
+{%block css%}
+<style type="text/css">
+.errorlist{
+    color: #F44336;
+}
+</style>
+{%endblock%}
+{% block content %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Create Health Plan</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form id="demo-form" action="" method="POST" enctype='multipart/form-data'>{%csrf_token%}
+            <div class="row">                
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Name</label>
+                    {{form.name.errors}}
+                    {{form.name}}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Price</label>
+                    {{form.price.errors}}
+                    {{form.price}}
+                </div>
+            </div>
+            </div>
+            <div class="row">                
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Test</label>
+                    {{form.tests.errors}}
+                    {{form.tests}}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Doctor</label>
+                    {{form.doctor.errors}}
+                    {{form.doctor}}
+                </div>
+            </div>
+            </div>
+            <br>
+            <div class="col-sm-11">
+                <button class="btn btn-primary pull-right" type="submit">Submit</button>
+            <div>
+        </form>
+    </div>
+</div>
+{% endblock %}

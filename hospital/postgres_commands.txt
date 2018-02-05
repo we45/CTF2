@@ -1,0 +1,9 @@
+Import Dump File
+	- psql -h <host> -d <dbname> -U <username> -f <sql file path>
+	- psql <dbname> < <sql file path>
+
+
+Set password
+	- ALTER USER <username> WITH PASSWORD '<password>';
+
+		

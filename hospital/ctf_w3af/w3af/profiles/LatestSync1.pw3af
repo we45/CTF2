@@ -1,0 +1,138 @@
+[profile]
+description = LatestSync1
+name = LatestSync1
+
+[audit.xpath]
+
+[audit.xss]
+persistent_xss = True
+
+[audit.csrf]
+
+[audit.xst]
+
+[audit.cors_origin]
+origin_header_value = http://w3af.org/
+
+[audit.blind_sqli]
+eq_limit = 0.9
+
+[audit.sqli]
+
+[audit.ldapi]
+
+[audit.response_splitting]
+
+[audit.rfd]
+
+[output.console]
+verbose = True
+
+[grep.dom_xss]
+
+[grep.strict_transport_security]
+
+[grep.error_pages]
+
+[grep.path_disclosure]
+
+[grep.strange_headers]
+
+[grep.private_ip]
+
+[grep.error_500]
+
+[grep.code_disclosure]
+
+[crawl.import_results]
+input_base64 = /home/prakash/bit_bucket/ctf2/hospital/ctf_w3af/output.base64
+
+[infrastructure.dot_net_errors]
+
+[target]
+target = http://localhost:8000
+
+[misc-settings]
+fuzz_cookies = False
+fuzz_form_files = True
+fuzz_url_filenames = False
+fuzz_url_parts = False
+fuzzed_files_extension = gif
+fuzzable_headers = 
+form_fuzzing_mode = tmb
+stop_on_first_exception = False
+max_discovery_time = 120
+interface = eth0
+local_ip_address = 192.168.1.109
+non_targets = 
+msf_location = /opt/metasploit3/bin/
+
+[http-settings]
+timeout = 0
+headers_file = 
+basic_auth_user = 
+basic_auth_passwd = 
+basic_auth_domain = 
+ntlm_auth_domain = 
+ntlm_auth_user = 
+ntlm_auth_passwd = 
+ntlm_auth_url = 
+cookie_jar_file = 
+ignore_session_cookies = False
+proxy_port = 8080
+proxy_address = 
+user_agent = Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4
+rand_user_agent = False
+max_file_size = 400000
+max_http_retries = 2
+max_requests_per_second = 0
+always_404 = 
+never_404 = 
+string_match_404 = 
+url_parameter = 
+
+[infrastructure.server_status]
+
+[infrastructure.allowed_methods]
+execOneTime = True
+reportDavOnly = True
+
+[infrastructure.server_header]
+
+[audit.file_upload]
+extensions = gif,html,bmp,jpg,png,txt
+
+[audit.generic]
+diff_ratio = 0.3
+
+[audit.os_commanding]
+
+[audit.lfi]
+
+[audit.dav]
+
+[audit.ssi]
+
+[audit.eval]
+use_time_delay = True
+use_echo = True
+
+[audit.websocket_hijacking]
+
+[grep.wsdl_greper]
+
+[audit.shell_shock]
+
+[audit.rfi]
+listen_address = 192.168.1.25
+listen_port = 44449
+use_w3af_site = True
+
+[grep.dot_net_event_validation]
+
+[grep.feeds]
+
+[grep.directory_indexing]
+
+[grep.csp]
+

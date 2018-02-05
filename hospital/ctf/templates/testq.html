@@ -1,0 +1,36 @@
+{% extends "base/base.html" %}
+{% block content %}
+<form action="" method="POST">
+  {% csrf_token %}
+<input type="text" name="search" />
+<input type="Submit" value="Search" />
+</form>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Health Record</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Patient</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Date of Birth</th>
+                </tr>
+            </thead>
+            {% for pat in patients %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ pat }}</td>
+                <td>{{pat.email}}</td>
+                <td>{{ pat.phone }}</td>
+                <td>{{ pat.dob }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

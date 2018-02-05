@@ -1,0 +1,37 @@
+[supervisord]
+nodaemon=true
+
+[program:zap]
+command=/bin/bash /tools/ZAP_2.5.0/zap.sh -daemon -host 0.0.0.0 -port 8090 -config api.disablekey=true
+redirect_stderr=true
+stdout_logfile=/tools/ZAP_2.5.0/we45_zap.log
+stdout_logfile_maxbytes=0
+auto_start=true
+autorestart=true
+
+[program:w3af]
+command=/bin/bash -c "/tools/w3af/venv/bin/python /tools/w3af/w3af_api 0.0.0.0:5000"
+redirect_stderr=true
+stdout_logfile=/tools/w3af/we45_w3af.log
+stdout_logfile_maxbytes=0
+auto_start=true
+autorestart=true
+
+[program:redis]
+command=redis-server
+redirect_stderr=true
+stdout_logfile=/tools/scanner/redis.log
+stdout_logfile_maxbytes=0
+auto_start=true
+autorestart=true
+
+[program:mqtt]
+command=/bin/bash -c "/tools/scanner/venv/bin/python /webapps/api_docker/mqtt_service.py"
+redirect_stderr=true
+stdout_logfile=/tools/scanner/we45_mqtt.log
+stdout_logfile_maxbytes=0
+auto_start=true
+autorestart=true
+
+
+

@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+{% block content %}
+<script type="text/javascript">
+  function update(jsn)
+      {
+       $.ajax({
+         type: "POST",
+         url: '/update/record/',
+         data: {
+          rid: jsn,
+          remarks : 'AIDS',
+          csrfmiddlewaretoken: '{{csrf_token}}',
+              },
+        success: function(data) {
+              alert(data);
+             },                
+        error: function(xhr, textStatus, errorThrown) {
+               alert("something went wrong");
+               // alert(errorThrown)
+             }
+         });
+    
+      }
+ </script>
+ <button type="button" onClick="update(13)">Submit</button>
+{% endblock %}

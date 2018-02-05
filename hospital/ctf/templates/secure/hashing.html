@@ -1,0 +1,243 @@
+{% extends "base/base.html" %}
+{%block title%}SecDevOps-Secure-Encription{%endblock%}
+
+<style type="text/css">
+
+.main_header{
+
+  font-style: normal;
+
+  font-family: Helvetica;
+
+  font-style: bold;
+
+  margin-top: 3%;
+
+}
+
+.text-wrap {
+
+      -ms-word-break: break-all;
+
+      word-break: break-all;
+
+      word-break: break-word;
+
+      -webkit-hyphens: auto;
+
+      -moz-hyphens: auto;
+
+      hyphens: auto;
+
+      }
+
+
+
+td {
+
+  word-wrap:break-word;
+
+  word-break:break-word;
+
+}
+
+/*table {
+
+    table-layout: fixed;
+
+    word-wrap: break-word;
+
+}*/
+
+/*table {border-collapse:collapse; table-layout:fixed; width:310px;}
+
+   table td {border:solid 1px #fab; width:100px; word-wrap:break-word;}
+
+   td {
+
+overflow: hidden;
+
+max-width: 400px;
+
+word-wrap: break-word;
+
+}*/
+
+</style>
+
+{%block content%}
+<h2 class="text-center" style="margin-top:19%;">HASH</h2>
+<div class="content">
+
+  <div class="content_box">
+
+    <div class="row">
+
+    <div class="col-md-12">
+
+      <div class="block-flat">
+
+      <br>      
+
+      <div class="content">
+
+        <form class="form-horizontal group-border-dashed" action="" method="POST">           
+
+          {%csrf_token%}
+
+      
+
+          <div class="col-sm-12">              
+
+            <div class="pull-right">
+
+              <input name="srchbutton" type="submit" class="btn btn-primary" value="Check">
+
+            </div>
+
+            <div class="col-sm-10 pull-left">
+
+              {{form.hashing}}
+
+            </div>
+
+         </div>
+
+         {%if sha1_det%}
+
+         <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-11">
+
+              <div class="table-responsive">
+
+                <table class="table table-bordered">
+
+                  <caption>
+
+                    <h3>HASH VALUES</h3>
+
+                  </caption>
+
+                  <thead>
+
+                    <th class="text-center">Hashing Name</th>
+
+                    <th class="text-center">Without Salt Hashing</th>
+
+                    <th class="text-center">With Salt Hashing</th>
+
+                  </thead>
+
+                  <tbody>
+
+                    <tr>
+
+                      <td class="col-md-3">
+
+                        <p>SHA1</p>
+
+                      </td> 
+
+                      <td class="col-md-3">
+
+                        <p>{{sha1_det}}</p>
+
+                      </td> 
+
+                      <td class="col-md-3">
+
+                        <p>{{sha1_with_salt}}</p>
+
+                      </td>
+
+                    </tr>
+
+                    <tr>
+
+                      <td class="col-md-3">
+
+                        <p>SHA1</p>
+
+                      </td> 
+
+                      <td class="col-md-3">
+
+                        <p>{{sha1_det}}</p>
+
+                      </td> 
+
+                      <td class="col-md-3">
+
+                        <p>{{sha1_with_salt2}}</p>
+
+                      </td>
+
+                    </tr>
+
+                     <tr>
+
+                      <td class="col-md-3">
+
+                        <p>SHA1</p>
+
+                      </td> 
+
+                      <td class="col-md-3">
+
+                        <p>{{sha1_det}}</p>
+
+                      </td> 
+
+                      <td class="col-md-3">
+
+                        <p>{{sha1_with_salt3}}</p>
+
+                      </td>
+
+                    </tr>
+
+                                      
+
+                  </tbody>
+
+                </table>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {%endif%}
+
+
+        </form>        
+
+      </div>
+
+    </div>
+
+    </div>
+
+</div>
+
+<!-- Footer Part   -->
+
+    <div class="copy">
+
+       <p>© 2015 we45</p>
+
+    </div>
+
+     </div>
+
+   </div>
+
+{%endblock%}
+
+<!-- End-Of-File -->

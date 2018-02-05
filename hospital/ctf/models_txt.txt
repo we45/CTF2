@@ -1,0 +1,82 @@
+Health Application
+CRUD - Patient, Doctor, Health Plan, Health Records, Appointment
+
+
+Advanced JavaScript XSS
+HTTP Password Enumeration bruteforce
+HMAC + Poor passphrase HTTP Web Service => APK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Patient
+
+- name
+- email
+- phone
+- dob
+- address
+- gender
+
+Doctor
+
+- name
+- qualification
+- expertise
+- phone
+- email
+- gender
+- photo
+
+Tests
+
+- name
+
+HealthPlan
+
+- type
+- price
+- tests (MM)
+
+Appointment
+
+- date
+- doctor(FK)
+- patient(FK)
+- time
+- reason
+- token
+- type (FK) = HealthPlan
+
+
+HealthRecord
+
+- patient(FK)
+- file
+- remarks
+
+
+
+
+
+
+
+
+

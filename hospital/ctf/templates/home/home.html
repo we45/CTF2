@@ -1,0 +1,223 @@
+{% extends "home/home_base.html" %}
+{%block header%}
+  <!--header-->
+  <div class="header">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-left">
+          <h1><a href="/"><img src="/static/images/logo.png" alt="">we Care</a></h1>
+        </div>
+        <!--navigation-->
+   <!--      <div class="header-text navbar-left">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting<p>
+        </div> -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="header-right">
+          <div class="top-nav-text">
+            <ul>
+              <li>Call us: <span>080-42124017</span></li>
+              <li>Email : SecDevOps@we45.com</li>   
+              <li><a href="/login/" class="btn btn-danger">Login</a></li>   
+            </ul>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">         
+            <ul class="nav navbar-nav navbar-left">
+              <li class="active"><a href="/"><span>H</span><span>O</span><span>M</span><span>E</span></a></li>
+              <li><a href="/about/" class="link link--yaku"><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></a></li>    
+              <!-- appointment -->
+              <li><a href="/appointment/add/" class="link link--yaku"><span>A</span><span>P</span><span>P</span><span>O</span><span>I</span><span>N</span><span>T</span> <span>M</span><span>E</span><span>N</span><span>T</span></a></li>
+              <li><a href="/contact_us/" class="link link--yaku"><span>C</span><span>O</span><span>N</span><span>T</span><span>A</span><span>C</span><span>T</span> <span>U</span><span>S</span></a></li>
+            </ul>   
+            <div class="clearfix"> </div>
+          </div><!--//navigation-->
+        </div>
+        <div class="clearfix"> </div>
+      </div>  
+    </nav>    
+  </div>  
+  <!--//header-->
+{%endblock%}
+{% block content %}
+  <!--banner-->
+  <div class="banner">
+    <div class="container">
+      <section class="slider">
+        <div class="flexslider">
+          <ul class="slides">
+            <li>
+              <div class="banner-info">
+                <h2>Access to world class health care, now a click away!</h2>
+                <p>My doctor stays with my parents at home while I work.Does yours?Presenting askwecare.com,the virtual consultation platform.</p>                
+                <a href="/appointment/add/" class="btn btn-primary">APPOINTMENT</a>
+              </div>
+            </li>           
+            <li>
+              <div class="banner-info">
+                <h2>The weCare World of Care Assuring. Advanced. Accessible</h2>
+                <p>Our team of over 5000 doctors join me in giving you the best of modern healthcare to ensure you stay healthy, always.</p>               
+                <a href="/appointment/add/" class="btn btn-primary">APPOINTMENT</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <!-- FlexSlider -->
+      <script defer src="/static/js/jquery.flexslider.js"></script>
+      <script type="text/javascript">
+        $(window).load(function(){
+          $('.flexslider').flexslider({
+          animation: "slide",
+          start: function(slider){
+            $('body').removeClass('loading');
+          }
+          });
+        });
+      </script>
+    <!-- //FlexSlider -->
+  </div>
+  <!--banner-->
+  <!--banner-bottom-->
+  <div class="banner-bottom">
+    <div class="container">
+      <h4>Centres of Excellence</h4>
+      <p>Combining the best specialists and equipment to provide you nothing short of the best in healthcare</p>
+    </div>
+  </div>
+  <!--//banner-bottom-->
+  <!--features-->
+  <div class="features">
+    <div class="container">
+      <div class="col-md-4 feature-grids">
+        <h3 class="title">WHAT <span>WE ARE</span></h3>
+        <p>The weCare is a landmark healthcare services institution that enjoys a unique reputation of being a popular destination for both Indian and international patients seeking treatment at an affordable cost. The weCare has lent its unique dimension of human touch to the complex science of healthcare. The weCare mission is to maintain a high degree of quality and care to any patient seeking medical aid is sacrosanct to its highly acclaimed and equipped team. weCare founders are Dr. Sherlock and his friend Dr. Watson</p>
+        <p>The ISO 9000 family addresses various aspects of quality management and contains some of the ISO's best known standards. The standards provide guidance and tools for companies and organizations who want to ensure that their products and services consistently meet customer's requirements and that the quality is consistently improving.</p>
+      <!--   <div class="more">
+          <a href="#" class="effect6">Read More</a>
+        </div> -->
+      </div>
+      <div class="col-md-4 feature-grids">
+        <!-- <img src="images/2.png" alt=""/> -->
+      </div>
+      <div class="col-md-4 feature-grids">
+        <h3 class="title">OUR SPECIALITIES</h3>
+        <div class="pince">
+          <div class="pince-left">
+            <h5>01</h5>
+          </div>
+          <div class="pince-right">
+            <h4>CLINICAL RESEARCH CARE</h4>
+            <p>Organization has been conducting funded and non funded research for the past 12 years. Funded research has been industry sponsored as well as ICMR, IAEA, Student Thesis. The primary focus has been patient safety and well being over science. This has been possible due a vigilant, independent ethics committee and the organization's commitment for the same.</p>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+     <!--    <div class="pince">
+          <div class="pince-left">
+            <h5>02</h5>
+          </div>
+          <div class="pince-right">
+            <h4>Quasellus eget purus mauris </h4>
+            <p>Vero vulputate enim non justo posuere placerat Phasellus mauris.</p>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        <div class="pince">
+          <div class="pince-left">
+            <h5>03</h5>
+          </div>
+          <div class="pince-right">
+            <h4>Quasellus eget purus mauris </h4>
+            <p>Vero vulputate enim non justo posuere placerat eget.</p>
+          </div>
+          <div class="clearfix"> </div>
+        </div> -->
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+  <!--//features-->
+  <!--projects-->
+  <!-- <div class="projects">
+    <div class="container">
+      <div class="col-md-3 project-right ">
+        <h3 class="title">OUR <span> PROJECTS</span></h3>
+        <p>Vero vulputate enim non justo posuere placerat Phasellus mauris vulputate enim non justo posuere placerat egetposuere enim .</p>
+      </div>
+      <div class="col-md-9 project-left">
+        <! flex-slider -->
+       <!--  <div class="work-bottom">
+          <div class="nbs-flexisel-container"><div class="nbs-flexisel-inner">
+            <ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -285px; display: block;">                                                                   
+              <li class="nbs-flexisel-item" style="width: 285px;">
+                <div class="project-grids">
+                  <img src="/static/images/img1.jpg" alt="">
+                  <div class="team-bottom">
+                  </div>
+                </div>
+              </li>
+              <li class="nbs-flexisel-item" style="width: 285px;">
+                <div class="project-grids">
+                  <img src="/static/images/img2.jpg" alt="">
+                  <div class="team-bottom">
+                  </div>
+                </div>
+              </li>
+              <li class="nbs-flexisel-item" style="width: 285px;">
+                <div class="project-grids">
+                  <img src="/static/images/img3.jpg" alt="">
+                  <div class="team-bottom">
+                  </div>
+                </div>
+              </li>
+              <li class="nbs-flexisel-item" style="width: 285px;">
+                <div class="project-grids">
+                  <img src="/static/images/img4.jpg" alt="">
+                  <div class="team-bottom">
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="nbs-flexisel-nav-left" style="top: 138px;"></div><div class="nbs-flexisel-nav-right" style="top: 138px;"></div></div></div>
+              <script type="text/javascript">
+                $(window).load(function() {
+                  $("#flexiselDemo1").flexisel({
+                    visibleItems: 4,
+                    animationSpeed: 1000,
+                    autoPlay: true,
+                    autoPlaySpeed: 3000,        
+                    pauseOnHover: true,
+                    enableResponsiveBreakpoints: true,
+                    responsiveBreakpoints: { 
+                      portrait: { 
+                        changePoint:480,
+                        visibleItems: 2
+                      }, 
+                      landscape: { 
+                        changePoint:640,
+                        visibleItems: 3
+                      },
+                      tablet: { 
+                        changePoint:768,
+                        visibleItems: 3
+                      }
+                    }
+                  });
+                  
+                });
+              </script>
+              <script type="text/javascript" src="js/jquery.flexisel.js"></script>        
+            <! //flex-slider -->  
+       <!--  </div>
+      </div> --> 
+   <!--    <div class="clearfix"> </div>
+    </div>
+  </div> -->
+  <!--//projects-->
+
+{% endblock %}

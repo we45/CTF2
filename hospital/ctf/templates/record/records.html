@@ -1,0 +1,39 @@
+{% extends "base/base.html" %}
+{% block content %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Health Record</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <table class='table'>            
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Patient</th>
+                    <th>Health Record</th>
+                    <th>Remarks</th>
+                    <th>Uploaded By</th>
+                    <th></th>
+                </tr>
+            </thead>
+            {% for record in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ record.patient }}</td>
+                <td><a href="/media/{{record.report}}/">Click Here</a></td>
+                <td>{{ record.remarks }}</td>
+                <td>{{ record.staff }}</td>
+                {% if user.is_superuser %}
+                <td align='right'>
+                    <a href="/record/delete/{{record.id}}/" class='btn btn-small btn-danger'>
+                        Delete
+                    </a>
+                </td>
+                {%endif%}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

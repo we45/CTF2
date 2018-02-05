@@ -1,0 +1,13 @@
+python manage.py test test.CTF.test_csrf --settings="hospital.selenium_settings"
+
+python manage.py test test.CTF.test_session_fixation --settings="hospital.selenium_settings"
+
+python manage.py test test.CTF.test_xss --settings="hospital.selenium_settings"
+
+python manage.py test test.CTF.test_sha1 --settings="hospital.selenium_settings"
+
+python manage.py test test.CTF.test_elastisearch --settings="hospital.selenium_settings"
+
+python manage.py test test.CTF.test_ajax --settings="hospital.selenium_settings"
+
+python manage.py test test.CTF.test_sql_injection --settings="hospital.selenium_settings"

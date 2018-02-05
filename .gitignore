@@ -1,0 +1,4 @@
+*.pyc
+**/*.pyc
+**/media/doctors/*.*
+*.sqlite3

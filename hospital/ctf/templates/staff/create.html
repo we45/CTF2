@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+{% block content %}
+<div class="x_panel">
+                <div class="x_title">
+                  <h2>Create Staff</h2>                  
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                  <form id="demo-form" action="" method="POST">
+                    {%csrf_token%}
+                    <label for="fullname">Name * :</label>
+                      {{form.username}}
+
+                    <label for="email">Email * :</label>
+                      {{form.email}}                   
+
+                        <br/>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+
+                  </form>
+                 
+
+                </div>
+              </div>
+{% endblock %}

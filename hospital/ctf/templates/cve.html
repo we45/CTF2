@@ -1,0 +1,69 @@
+{% extends "base/base.html" %}
+{%block title%}SecDevOps - Requirements Analysis{%endblock%}
+{%block content%}
+<div class="content">
+    <h1 align="center">Requirements Analysis</h1>
+    <div class="row">
+        <div class="col-md-12"  id="accordion">
+            <table class='table'>
+            {% load get %}
+            {% for c in cves %}
+                {% for k,v in c.items %}
+                <tr>
+                    <td width="40%">
+                        <h4><b class='text-info'>{{k}}</b></h4>
+                    </td>
+                    <td class='text-left' style='padding-top:1.5%;'>
+                        Vulnerability Count : {{ v|length }}
+                    </td>
+                    <td align='right'>                        
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{forloop.parentloop.counter}}">
+                            <h4>[+/-]</h4>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='3'>
+                        <table class='table collapse' id="collapse{{forloop.parentloop.counter}}" >
+                            {% if v %}
+                                <tr>
+                                    <th class='text-center'>CVE</th>
+                                    <th class='text-center'>Vulnerability</th>
+                                    <th class='text-center'>Reference</th>
+                                </tr>
+                                {%for k1 in v%}                            
+                                    {% with k1|get:"_source" as source %} 
+                                    <tr>
+                                        <td class='text-center' width='20%'>
+                                            {{source.name}}
+                                        </td>                                
+                                        <td width='40%'>
+                                            {{source.description}}
+                                        </td>
+                                        <td width='40%' class='wrap_text'>
+                                            <ol>
+                                                {%for o in source.references%}
+                                                    <li>{{o}}</li>
+                                                {% endfor%}
+                                            </ol>
+                                        </td>
+                                    </tr>
+                                    {% endwith %}
+                                {% endfor %}
+                            {% else %}
+                            <tr>
+                                <td colspan='3'>No Vulnerabilities Found</td>
+                            </tr>
+                            {% endif %}
+                        </table>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+

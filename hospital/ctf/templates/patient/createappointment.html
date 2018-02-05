@@ -1,0 +1,278 @@
+{% extends "home/home_base.html" %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.datetimepicker.css">
+<style type="text/css">
+.errorlist{
+    color: #F44336;
+}
+.text-highlight{
+  color: #4CAF50;
+}
+</style>
+
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+      var plan = $('#div2');
+      var doctor = $('#div1');
+
+      plan.hide("fast").fadeOut("fast");
+      doctor.hide("fast").fadeOut("fast")
+          // textarea.hide();
+      choice = $("#id_plan_type").val();
+      if (choice == 'HealthPlan') {
+
+          plan.show("fast").fadeIn("fast");
+          doctor.hide("fast").fadeOut("fast");
+      } else if (choice == 'Consultant') {
+          doctor.show("fast").fadeIn("fast");
+          plan.hide("fast").fadeOut("fast");
+      } else {
+
+          plan.hide("fast").fadeOut("fast");
+          doctor.hide("fast").fadeOut("fast");
+      }
+
+      $("#id_plan_type").change(function() {
+
+          var choiceselected = this.value;
+
+          // alert(choiceselected);
+          var plan = $('#div2');
+          var doctor = $('#div1');
+
+          plan.hide("fast").fadeOut("fast");
+          doctor.hide("fast").fadeOut("fast");
+
+          if (choiceselected == 'HealthPlan') {
+
+              plan.show("fast").fadeIn("fast");
+              doctor.hide("fast").fadeOut("fast");
+          } else if (choiceselected == 'Consultant') {
+              plan.hide("fast").fadeOut("fast");
+              doctor.show("fast").fadeIn("fast");
+          } else {
+
+              plan.hide("fast").fadeOut("fast");
+              doctor.hide("fast").fadeOut("fast");
+          }
+      });
+
+  });
+</script>
+{% endblock %}
+{%block header%}
+  <!--header-->
+  <div class="header">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-left">
+          <h1><a href="/"><img src="/static/images/logo.png" alt="">we Care</a></h1>
+        </div>
+        <!--navigation-->
+   <!--      <div class="header-text navbar-left">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting<p>
+        </div> -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="header-right">
+          <div class="top-nav-text">
+            <ul>
+              <li>Call us: <span>080-42124017</span></li>
+              <li>Email : SecDevOps@we45.com</li>   
+              <li><a href="/login/" class="btn btn-danger">Login</a></li>   
+            </ul>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">         
+            <ul class="nav navbar-nav navbar-left">
+              <li><a href="/"><span>H</span><span>O</span><span>M</span><span>E</span></a></li>
+              <li><a href="/about/" class="link link--yaku"><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></a></li>    
+              <!-- appointment -->
+              <li class="active"><a href="/appointment/add/" class="link link--yaku"><span>A</span><span>P</span><span>P</span><span>O</span><span>I</span><span>N</span><span>T</span> <span>M</span><span>E</span><span>N</span><span>T</span></a></li>
+              <li><a href="/contact_us/" class="link link--yaku"><span>C</span><span>O</span><span>N</span><span>T</span><span>A</span><span>C</span><span>T</span> <span>U</span><span>S</span></a></li>
+            </ul>   
+            <div class="clearfix"> </div>
+          </div><!--//navigation-->
+        </div>
+        <div class="clearfix"> </div>
+      </div>  
+    </nav>    
+  </div>  
+  <!--//header-->
+{%endblock%}
+{% block content %}
+<!--   <div class="banner about-bnr">
+    <div class="container">
+    </div>
+  </div> -->
+  <!--about-->
+  <div class="about">
+    <div class="container">
+      {% if final_message %}
+        <h5 class="title1 text-highlight" align="center"><i>{{ final_message.msg }}</i></h5>
+        <br/>
+        <input type="hidden" name="token" value="{{ final_message.token }}">
+      {% endif %}
+      <h3 class="title1">Appointment<span></span></h3>
+      <hr>
+      <!-- <div class="row"> -->
+      <div class="about-info">
+        <form id="appointmentForm" action="" method="POST">
+            {% csrf_token %}
+       <div class="col-sm-12">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Name</label>
+            <div class="col-sm-8">
+              {{patientform.name.errors}}
+              {{patientform.name}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Email</label>
+            <div class="col-sm-8">
+             {{patientform.email.errors}}
+             {{patientform.email}}
+            </div>
+          </div>        
+        </div>
+       </div>
+       <br>
+       <br>
+       <br>
+       <div class="col-sm-12">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Phone Number</label>
+            <div class="col-sm-8">
+              {{patientform.phone.errors}}
+              {{patientform.phone}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Date of Birth</label>
+            <div class="col-sm-8">
+             {{patientform.dob.errors}}
+              {{patientform.dob}}
+            </div>
+          </div>        
+        </div>
+       </div>
+       <br>
+       <br>
+       <br>
+       <div class="col-sm-12">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Gender</label>
+            <div class="col-sm-8">
+              {{patientform.gender.errors}}
+              {{patientform.gender}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Address</label>
+            <div class="col-sm-8">
+             {{patientform.address.errors}}
+              {{patientform.address}}
+            </div>
+          </div>        
+        </div>
+       </div>
+       <br>
+       <br>
+       <br>
+       <div class="col-sm-12">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Health Plan</label>
+            <div class="col-sm-8">
+              {{appointmentform.plan_type.errors}}
+              {{appointmentform.plan_type}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6" id="div1">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Select Doctor</label>
+            <div class="col-sm-8">
+             {{doctorappointment.doctor.errors}}
+              {{doctorappointment.doctor}}
+            </div>
+          </div>        
+        </div>
+       </div>
+       <br>
+       <br>
+       <br>
+       <div class="col-sm-12">
+        <div class="col-sm-6" id="div2">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Select Health Plan</label>
+            <div class="col-sm-8">
+              {{planappointment.plan.errors}}
+              {{planappointment.plan}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Appointment Date</label>
+            <div class="col-sm-8">
+             {{appointmentform.datetime.errors}}
+              {{appointmentform.datetime}}
+            </div>
+          </div>        
+        </div>       
+       </div>
+       <br>
+       <br>
+       <br>
+       <div class="col-sm-12">
+         <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-sm-4 text-style">Appointment Reason</label>
+            <div class="col-sm-8">
+              <br>
+
+             {{appointmentform.reason.errors}}
+              {{appointmentform.reason}}
+            </div>
+          </div>        
+        </div>
+        <div class="col-sm-6">        
+        </div>
+       </div>
+       <div class="col-sm-12">
+        <div class="col-sm-11">
+          <div class="form-group">            
+            <input type="submit" value="Submit" class="btn btn-primary pull-right" />
+          </div>
+        </div>
+       </div>
+   
+        <div class="clearfix"> </div>
+      </div>
+    </form>
+      </div>
+    <!-- </div> -->
+  </div>
+
+  <script type="text/javascript" src="/static/js/jquery.datetimepicker.full.js"></script>
+  <script type="text/javascript">
+  $('#datetimepicker').datetimepicker({step:60});
+  </script>
+{% endblock %}
