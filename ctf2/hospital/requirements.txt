@@ -21,5 +21,3 @@ elasticsearch==1.2.0
 lxml==3.6.0
 pytest
 python-owasp-zap-v2.4==0.0.8
-
-
