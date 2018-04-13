@@ -31,4 +31,8 @@ USER root
 EXPOSE 5432 8000 80
 ENV WEB_SERVER='localhost'
 WORKDIR /webapps/ctf2/hospital/
+COPY ssl-params.conf /etc/nginx/snippets/
+COPY self-signed.conf /etc/nginx/snippets/
+RUN openssl req -subj /CN=localhost/DC=localhost/DC=localdomain -new -newkey rsa:2048 -days "365" -nodes -x509 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+RUN openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 CMD service postgresql start && service nginx restart && /webapps/ctf2/hospital/gun_start
