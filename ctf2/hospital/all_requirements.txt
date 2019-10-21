@@ -119,7 +119,7 @@ django-wysiwyg==0.7.0
 djangotoolbox==1.6.2
 docutils==0.12
 dodge==0.1.7
-ecdsa==0.11
+ecdsa==0.13.3
 elasticsearch==1.2.0
 elasticutils==0.10.2
 enum34==1.0.4
