@@ -179,7 +179,7 @@ pisa==3.0.33
 plotly==1.7.6
 ply==3.4
 preppy==2.3.2
-psutil==2.1.3
+psutil==5.6.6
 psycopg2==2.6.1
 py2docx==0.2.0
 py2exe==0.6.9
