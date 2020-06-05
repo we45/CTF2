@@ -1,6 +1,6 @@
 BeautifulSoup==3.2.1
 colorama==0.3.7
-Django==1.8
+Django==1.11.29
 django-tastypie==0.13.3
 Jinja2==2.8
 MarkupSafe==0.23

@@ -3,7 +3,7 @@ BeautifulSoup==3.2.1
 CairoSVG==1.0.9
 CoAPthon==4.0.0
 Coffin==2.0.1
-Django==1.6.11
+Django==1.11.29
 ESClient==0.5.8
 Fabric==1.10.0
 Flask==0.10.1
