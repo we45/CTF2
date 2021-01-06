@@ -1,6 +1,6 @@
 Babel==1.3
 BeautifulSoup==3.2.1
-CairoSVG==1.0.9
+CairoSVG==2.5.1
 CoAPthon==4.0.0
 Coffin==2.0.1
 Django==1.6.11
