@@ -150,7 +150,7 @@ jsonfield==1.0.0
 kombu==3.0.26
 ldap3==0.9.7.11
 logger==1.4
-lxml==3.3.5
+lxml==4.6.3
 mailer==0.7
 mammoth==0.3.8
 markdown2==2.3.0
