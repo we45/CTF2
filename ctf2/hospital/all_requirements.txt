@@ -99,7 +99,7 @@ django-picklefield==0.3.1
 django-polymodels==1.2.2
 django-queryinspect==0.0.4
 django-redis==3.7.1
-django-registration==0.8
+django-registration==3.1.2
 django-registration-email==0.5.4
 django-reversion==1.8.1
 django-reversion-compare==0.3.5
