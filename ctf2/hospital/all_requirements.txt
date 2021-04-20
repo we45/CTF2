@@ -30,7 +30,7 @@ UNKNOWN==0.0.0
 WMI==1.4.9
 WTForms==2.0.1
 WeasyPrint==0.23
-Werkzeug==0.9.6
+Werkzeug==0.15.3
 XlsxWriter==0.7.3
 activedirectory==0.14
 akismet==0.2.0
