@@ -6,7 +6,7 @@ Jinja2==2.8
 MarkupSafe==0.23
 nltk==3.2.1
 paho-mqtt==1.1
-Pillow==3.1.1
+Pillow==8.3.2
 psycopg2==2.6.1
 python-dateutil==2.5.1
 python-mimeparse==1.5.1
