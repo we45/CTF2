@@ -28,6 +28,6 @@ tblib==0.2.0
 pyasn1==0.1.8
 lxml==3.4.4
 vulndb==0.0.19
-mitmproxy==0.13
+mitmproxy==7.0.3
 xdot==0.6
 
