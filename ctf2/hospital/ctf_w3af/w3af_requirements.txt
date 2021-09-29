@@ -4,7 +4,7 @@ GitPython==0.3.2.RC1
 pybloomfiltermmap==0.3.14
 esmre==0.3.1
 phply==0.9.1
-nltk==3.0.1
+nltk==3.6.3
 chardet==2.1.1
 pdfminer==20140328
 futures==2.1.5
