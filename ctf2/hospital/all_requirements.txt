@@ -172,7 +172,7 @@ oauthlib==1.0.3
 openpyxl==2.1.5
 openvas.omplib==0.1.0
 pandas==0.16.1
-paramiko==1.14.1
+paramiko==2.10.1
 parsimonious==0.5
 pdfkit==0.4.1
 pisa==3.0.33
